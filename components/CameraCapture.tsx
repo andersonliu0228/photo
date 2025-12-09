@@ -21,7 +21,7 @@ const CameraCapture: React.FC<CameraCaptureProps> = ({ onCapture }) => {
         setIsStreamActive(true);
       }
     } catch (err) {
-      setError("Unable to access camera. Please allow permissions or use file upload.");
+      setError("無法存取相機。請允許權限或使用上傳檔案。");
       console.error(err);
     }
   };
@@ -89,8 +89,8 @@ const CameraCapture: React.FC<CameraCaptureProps> = ({ onCapture }) => {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" />
               </svg>
             </div>
-            <h2 className="text-2xl font-bold text-white">Ready to Time Travel?</h2>
-            <p className="text-gray-400">Take a selfie or upload a photo to begin your journey through history.</p>
+            <h2 className="text-2xl font-bold text-white">準備好穿越時空了嗎？</h2>
+            <p className="text-gray-400">拍張自拍或上傳照片，開啟你的歷史之旅。</p>
             
             <div className="flex flex-col gap-3 w-full">
               <button 
@@ -100,7 +100,7 @@ const CameraCapture: React.FC<CameraCaptureProps> = ({ onCapture }) => {
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                   <path fillRule="evenodd" d="M4 5a2 2 0 00-2 2v8a2 2 0 002 2h12a2 2 0 002-2V7a2 2 0 00-2-2h-1.586a1 1 0 01-.707-.293l-1.121-1.121A2 2 0 0011.172 2H8.828a2 2 0 00-1.414.586L6.293 4.707A1 1 0 015.586 5H4zm6 9a3 3 0 100-6 3 3 0 000 6z" clipRule="evenodd" />
                 </svg>
-                Launch Camera
+                啟動相機
               </button>
               
               <div className="relative">
@@ -114,7 +114,7 @@ const CameraCapture: React.FC<CameraCaptureProps> = ({ onCapture }) => {
                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                     <path fillRule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM6.293 6.707a1 1 0 010-1.414l3-3a1 1 0 011.414 0l3 3a1 1 0 01-1.414 1.414L11 5.414V13a1 1 0 11-2 0V5.414L7.707 6.707a1 1 0 01-1.414 0z" clipRule="evenodd" />
                   </svg>
-                  Upload Photo
+                  上傳照片
                 </button>
               </div>
             </div>

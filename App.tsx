@@ -22,7 +22,7 @@ const App: React.FC = () => {
     if (!capturedImage) return;
 
     setCurrentStep('processing');
-    setLoadingMessage(`Traveling to ${era.name}...`);
+    setLoadingMessage(`正在穿越至 ${era.name}...`);
     
     try {
       // We pass the captured image and the specific era prompt
@@ -31,7 +31,7 @@ const App: React.FC = () => {
       setCurrentStep('result');
     } catch (error) {
       console.error(error);
-      alert("Time travel failed! The wormhole was unstable. Please try again.");
+      alert("時空旅行失敗！蟲洞不穩定。請再試一次。");
       setCurrentStep('era');
     }
   };
@@ -58,7 +58,7 @@ const App: React.FC = () => {
           </h1>
         </div>
         <div className="ml-auto flex items-center gap-4 text-xs text-gray-500">
-          <span className="hidden sm:inline">Powered by Gemini</span>
+          <span className="hidden sm:inline">由 Gemini 技術提供</span>
         </div>
       </header>
 
@@ -67,12 +67,12 @@ const App: React.FC = () => {
         
         {/* Progress Stepper */}
         {currentStep !== 'processing' && (
-          <div className="mb-8 flex items-center gap-2 text-sm font-medium text-gray-500">
-            <span className={currentStep === 'camera' ? 'text-chrono-accent' : ''}>1. Snap</span>
-            <span className="w-4 h-[1px] bg-gray-700"></span>
-            <span className={currentStep === 'era' ? 'text-chrono-accent' : ''}>2. Select Time</span>
-            <span className="w-4 h-[1px] bg-gray-700"></span>
-            <span className={currentStep === 'result' ? 'text-chrono-accent' : ''}>3. Experience</span>
+          <div className="mb-10 flex items-center gap-4 text-xl font-bold text-gray-500 tracking-wide">
+            <span className={currentStep === 'camera' ? 'text-neon-pink drop-shadow-[0_0_8px_rgba(244,114,182,0.6)] scale-105 transition-all' : 'transition-all'}>1. 拍照</span>
+            <span className="w-8 h-[2px] bg-gray-700"></span>
+            <span className={currentStep === 'era' ? 'text-neon-pink drop-shadow-[0_0_8px_rgba(244,114,182,0.6)] scale-105 transition-all' : 'transition-all'}>2. 選擇時代</span>
+            <span className="w-8 h-[2px] bg-gray-700"></span>
+            <span className={currentStep === 'result' ? 'text-neon-pink drop-shadow-[0_0_8px_rgba(244,114,182,0.6)] scale-105 transition-all' : 'transition-all'}>3. 體驗</span>
           </div>
         )}
 
@@ -92,7 +92,7 @@ const App: React.FC = () => {
                onClick={() => setCurrentStep('camera')}
                className="mt-8 text-gray-500 hover:text-white underline text-sm"
              >
-               Retake Photo
+               重拍照片
              </button>
           </div>
         )}
@@ -106,7 +106,7 @@ const App: React.FC = () => {
             </div>
             <div className="text-center space-y-2">
               <h2 className="text-2xl font-bold text-white animate-pulse">{loadingMessage}</h2>
-              <p className="text-gray-400">Calibrating temporal flux capacitors...</p>
+              <p className="text-gray-400">正在校準時間通量電容器...</p>
             </div>
           </div>
         )}
